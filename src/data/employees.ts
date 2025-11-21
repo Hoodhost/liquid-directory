@@ -1,0 +1,51 @@
+import { Employee } from "@/components/DirectoryCard";
+
+export const initialEmployees: Omit<Employee, "id">[] = [
+  // Ayer Branch
+  { name: "Aaron Cormier", telephone: "(978) 862-1767", ext: "13318", fax: "(978) 862-0704", email: "acormier@hooddistribution.com", jobTitle: "Branch Manager", branch: "Ayer" },
+  { name: "Abner Santana", telephone: "978-641-6123", cellPhone: "978-641-6123", jobTitle: "Driver", branch: "Ayer" },
+  { name: "Craig Dowdy", telephone: "(978) 862-1762", ext: "13310", email: "cdowdy@hooddistribution.com", jobTitle: "Inside Sales", branch: "Ayer" },
+  { name: "Dan Foy", telephone: "978-235-2651", cellPhone: "978-235-2651", jobTitle: "Driver", branch: "Ayer" },
+  { name: "Darren Lando", telephone: "978-847-4122", cellPhone: "978-847-4122", jobTitle: "Driver", branch: "Ayer" },
+  { name: "David Kelley", telephone: "(978) 862-1770", ext: "13314", email: "dkelley@hooddistribution.com", jobTitle: "EWP Designer", branch: "Ayer" },
+  { name: "Eric Clark", telephone: "(978) 615-4245", ext: "13330", email: "eclark@hoodindustries.com", jobTitle: "EWP Designer", branch: "Ayer" },
+  { name: "Evyn Przypek", telephone: "(978) 862-1769", ext: "13312", email: "eprzypek@hooddistribution.com", jobTitle: "EWP Designer", branch: "Ayer" },
+  { name: "Jill Yard", email: "jyard@hooddistribution.com", cellPhone: "(518) 338-6223", jobTitle: "OSR", branch: "Ayer" },
+  { name: "Joanne Gaudet", telephone: "(978) 862-1763", ext: "13315", fax: "(978) 862-0706", email: "jgaudet@hooddistribution.com", cellPhone: "(978) 660-6267", homePhone: "(978) 772-2239", jobTitle: "HR - Distribution", branch: "Ayer" },
+  { name: "Joe Mariano", telephone: "508-254-0795", email: "jmariano@hooddistribution.com", cellPhone: "508-254-0795", jobTitle: "OSR", branch: "Ayer" },
+  { name: "John Baer", telephone: "(978) 862-1768", ext: "13321", email: "jbaer@hoodindustries.com", cellPhone: "(774) 437-2669", jobTitle: "OPS Manager", branch: "Ayer" },
+  { name: "John Junod", telephone: "(978) 862-1764", ext: "13313", email: "jjunod@hooddistribution.com", cellPhone: "(978) 835-3831", homePhone: "(603) 474-5909", jobTitle: "Purchasing/Sales Support", branch: "Ayer" },
+  { name: "Justin Vogel", telephone: "(978) 862-1765", ext: "13316", email: "jvogel@hooddistribution.com", jobTitle: "Assistant Branch Manager", branch: "Ayer" },
+  { name: "Kevin Brockmyre", telephone: "978-904-1111", email: "kbrockmy@hooddistribution.com", cellPhone: "978-904-1111", jobTitle: "OSR", branch: "Ayer" },
+  { name: "Mark Bilodeau", telephone: "978-790-7009", cellPhone: "978-790-7009", jobTitle: "Driver", branch: "Ayer" },
+  { name: "Mark Przypek", telephone: "(978) 862-1775", ext: "13324", email: "mprzypek@hooddistribution.com", jobTitle: "Engineered Wood buyer /Mgr", branch: "Ayer" },
+  { name: "Rob Reed", telephone: "802-324-7506", email: "rnreed@hooddistribution.com", cellPhone: "802-324-7506", jobTitle: "Purchasing (works from home)", branch: "Ayer" },
+  { name: "Steve Jankins", telephone: "603-918-9942", email: "sjankins@hooddistribution.com", cellPhone: "603-918-9942", jobTitle: "OSR", branch: "Ayer" },
+  { name: "Steven Simas", telephone: "(978) 862-1772", ext: "13303", email: "ssimas@hooddistribution.com", jobTitle: "Inside Sales", branch: "Ayer" },
+  { name: "Thomas Thurston", telephone: "(978) 862-1766", ext: "13311", email: "tthurston@hooddistribution.com", jobTitle: "Operations & Sales Support", branch: "Ayer" },
+  { name: "Toby Sonder", telephone: "401-440-2757", email: "tsonder@hooddistribution.com", cellPhone: "401-440-2757", jobTitle: "OSR (mostly Durham)", branch: "Ayer" },
+  { name: "Todd Dovhan", telephone: "860-280-1776", cellPhone: "860-280-1776", jobTitle: "Driver", branch: "Ayer" },
+  { name: "Virgil Cabral", telephone: "508-340-2649", cellPhone: "508-340-2649", jobTitle: "Driver", branch: "Ayer" },
+  
+  // Baltimore Branch
+  { name: "Tyler Jones", telephone: "(240) 203-7639", ext: "17002", fax: "(240) 349-5011", email: "tmjones@hooddistribution.com", cellPhone: "304 240 4629", jobTitle: "Branch Manager", branch: "Baltimore" },
+  { name: "Luke Gibson", telephone: "(240) 203-7780", ext: "17003", email: "lgibson@hooddistribution.com", jobTitle: "Inside Sales Representative", branch: "Baltimore" },
+  { name: "Todd Gladfelter", telephone: "(240) 203-7787", ext: "17004", email: "tgladfelter@hooddistribution.com", jobTitle: "Inside Sales Representative", branch: "Baltimore" },
+  { name: "David Jones", email: "djones@hooddistribution.com", cellPhone: "443-421-1549", jobTitle: "Outside Sales", branch: "Baltimore" },
+  { name: "Paul Coucill", email: "pcouncill@hooddistribution.com", jobTitle: "Outside Sales", branch: "Baltimore" },
+  
+  // Beaumont Plant
+  { name: "Alfred Baria", telephone: "(769) 303-4711", ext: "16053", email: "abaria@hoodindustries.com", cellPhone: "(601) 606-3969", homePhone: "(601) 784-3031", jobTitle: "Manufacturing Area Superintendent", branch: "Beaumont" },
+  { name: "Dalton Hayes", telephone: "(769) 303-4703", ext: "16012", email: "dhayes@hoodindustries.com", jobTitle: "Dryer Area Superintendent", branch: "Beaumont" },
+  { name: "Dareyl Vaughn", telephone: "(769) 303-4162", ext: "16000", fax: "(601) 928-7362", email: "dvaughn@hoodindustries.com", jobTitle: "People Operations Specialist", branch: "Beaumont" },
+  { name: "Ethan Broadus", telephone: "(601) 784-3413", ext: "16007", email: "ebroadus@hoodindustries.com", jobTitle: "Maintenance Manager", branch: "Beaumont" },
+  { name: "Jared Pittman", telephone: "(601) 588-3109", ext: "16003", email: "jpittman@hoodindustries.com", branch: "Beaumont" },
+  { name: "Joseph Denham", telephone: "(601) 588-3098", ext: "16005", email: "jdenham@hoodindustries.com", jobTitle: "Accounting Clerk", branch: "Beaumont" },
+  { name: "Joseph Kittrell", ext: "16013", email: "jkittrell@hoodindustries.com", jobTitle: "Mfg Area Superintendent", branch: "Beaumont" },
+  { name: "Joshua Childress", telephone: "(769) 303-4598", ext: "16056", fax: "(769) 303-4774", email: "jchildress@hoodindustries.com", jobTitle: "EHS Manager", branch: "Beaumont" },
+  { name: "Miguel Martinez", telephone: "(601) 588-3110", ext: "16004", email: "mmartine@hoodindustries.com", jobTitle: "Purchasing Manager", branch: "Beaumont" },
+  { name: "Mike Bernat", telephone: "(601) 588-2017", ext: "16006", email: "mbernat@hoodindustries.com", jobTitle: "Plant Manager", branch: "Beaumont" },
+  { name: "Samantha Nelson", telephone: "(769) 303-4720", ext: "16020", fax: "(601) 784-3816", email: "snelson@hoodindustries.com", jobTitle: "People Operations Manager", branch: "Beaumont" },
+  { name: "Stone Tolbert", telephone: "(601) 588-3108", ext: "16008", email: "gtolbert@hoodindustries.com", jobTitle: "Plant Operations Manager", branch: "Beaumont" },
+  { name: "Todd Hatten", telephone: "(769) 303-4715", ext: "16038", email: "thatten@hoodindustries.com", cellPhone: "(601) 762-5205", jobTitle: "Timber Buyer/Logging Supervisor - Beaumont", branch: "Beaumont" },
+];
