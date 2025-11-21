@@ -1,5 +1,7 @@
-import { User, Mail, Phone, Briefcase, Building2, Trash2 } from "lucide-react";
+import { useState } from "react";
+import { User, Mail, Phone, Briefcase, Building2, Trash2, Camera } from "lucide-react";
 import { Button } from "./ui/button";
+import { EditPhotoDialog } from "./EditPhotoDialog";
 
 export interface Employee {
   id: string;
@@ -12,15 +14,19 @@ export interface Employee {
   homePhone?: string;
   jobTitle?: string;
   branch?: string;
+  photo?: string;
 }
 
 interface DirectoryCardProps {
   employee: Employee;
   editMode: boolean;
   onDelete: (id: string) => void;
+  onUpdatePhoto: (id: string, photo: string) => void;
 }
 
-export const DirectoryCard = ({ employee, editMode, onDelete }: DirectoryCardProps) => {
+export const DirectoryCard = ({ employee, editMode, onDelete, onUpdatePhoto }: DirectoryCardProps) => {
+  const [photoDialogOpen, setPhotoDialogOpen] = useState(false);
+
   return (
     <div className="glass-card rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300 group relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/0 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -28,8 +34,24 @@ export const DirectoryCard = ({ employee, editMode, onDelete }: DirectoryCardPro
       <div className="relative z-10">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-              <User className="w-6 h-6 text-accent" />
+            <div 
+              className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center overflow-hidden relative group/photo cursor-pointer"
+              onClick={() => editMode && setPhotoDialogOpen(true)}
+            >
+              {employee.photo ? (
+                <img 
+                  src={employee.photo} 
+                  alt={employee.name} 
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <User className="w-6 h-6 text-accent" />
+              )}
+              {editMode && (
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/photo:opacity-100 transition-opacity flex items-center justify-center">
+                  <Camera className="w-5 h-5 text-white" />
+                </div>
+              )}
             </div>
             <div>
               <h3 className="font-semibold text-lg text-foreground">{employee.name}</h3>
@@ -97,6 +119,14 @@ export const DirectoryCard = ({ employee, editMode, onDelete }: DirectoryCardPro
           )}
         </div>
       </div>
+
+      <EditPhotoDialog
+        open={photoDialogOpen}
+        onOpenChange={setPhotoDialogOpen}
+        currentPhoto={employee.photo}
+        employeeName={employee.name}
+        onSave={(photo) => onUpdatePhoto(employee.id, photo)}
+      />
     </div>
   );
 };

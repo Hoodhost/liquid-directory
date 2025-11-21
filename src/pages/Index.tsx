@@ -66,6 +66,12 @@ const Index = () => {
     toast.success("Employee removed");
   };
 
+  const handleUpdatePhoto = (id: string, photo: string) => {
+    setEmployees(
+      employees.map((emp) => (emp.id === id ? { ...emp, photo } : emp))
+    );
+  };
+
   const handleEditClick = () => {
     if (editMode) {
       setEditMode(false);
@@ -173,6 +179,7 @@ const Index = () => {
               employee={employee}
               editMode={editMode}
               onDelete={handleDeleteEmployee}
+              onUpdatePhoto={handleUpdatePhoto}
             />
           ))}
         </div>
